@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install nodejs -y
 RUN apt-get install vim -y
 
 RUN git clone https://github.com/benboubekeur/educative-chapter-how-does-it-work &&\
-    cd educative-chapter-how-does-it-work && npm install
+    cd educative-chapter-how-does-it-work && npm install && composer install
 
 RUN	git clone https://github.com/benboubekeur/educative-vite-1.git &&\
 	cd educative-vite-1 && npm install
