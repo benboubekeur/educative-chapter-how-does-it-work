@@ -1,17 +1,19 @@
 <template>
-  <h1>Users</h1>
-
-  <div class="overflow-x-auto relative">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-      <tr>
-        <th class="py-3 px-6" scope="col">
-          Product name
-        </th>
-        <th class="py-3 px-6" scope="col">
-          Color
-        </th>
-        <th class="py-3 px-6" scope="col">
+  <div class="container mx-auto">
+    <div>
+      <h1 class="py-5 font-bold text-xl">Users</h1>
+    </div>
+    <div class="overflow-x-auto relative">
+      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+          <th class="py-3 px-6" scope="col">
+            Product name
+          </th>
+          <th class="py-3 px-6" scope="col">
+            Color
+          </th>
+          <th class="py-3 px-6" scope="col">
           Category
         </th>
       </tr>
@@ -29,7 +31,8 @@
         </td>
       </tr>
       </tbody>
-    </table>
+      </table>
+    </div>
   </div>
 
 </template>
