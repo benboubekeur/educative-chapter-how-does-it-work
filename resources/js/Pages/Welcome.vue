@@ -8,13 +8,13 @@
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
           <th class="py-3 px-6" scope="col">
-            Product name
+            First name
           </th>
           <th class="py-3 px-6" scope="col">
-            Color
+            Last name
           </th>
           <th class="py-3 px-6" scope="col">
-          Category
+            Email
         </th>
       </tr>
       </thead>
