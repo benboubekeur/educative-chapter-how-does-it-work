@@ -8,7 +8,7 @@ RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh &&\
 RUN apt-get update && apt-get install nodejs -y
 RUN apt-get install vim -y
 
-RUN git clone https://github.com/benboubekeur/educative-chapter-how-does-it-work/tree/displaying_dummy_data_in_a_table &&\
+RUN git clone -b displaying_dummy_data_in_a_table  https://github.com/benboubekeur/educative-chapter-how-does-it-work &&\
     cd educative-chapter-how-does-it-work && npm install
 
 RUN	git clone https://github.com/benboubekeur/educative-vite-1.git &&\
