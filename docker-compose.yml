@@ -1,20 +1,21 @@
 version: "3.7"
 services:
   app:
-    build:
-      args:
-        user: sammy
-        uid: 1000
-      context: ./
-      dockerfile: Dockerfile
-    container_name: travellist-app
-    restart: unless-stopped
+    image: tangramor/nginx-php8-fpm
+    environment:
+      TZ: 'Asia/Shanghai'
+      WEBROOT: '/var/www/html/public'
+      PHP_REDIS_SESSION_HOST: 'redis'
+      CREATE_LARAVEL_STORAGE: '1'
+      COMPOSERMIRROR: 'https://mirrors.cloud.tencent.com/composer/'
+      NPMMIRROR: 'https://registry.npmmirror.com'
     ports:
-      - '90:80'
+      - '80:80'
+      - '5173:5173'
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
     volumes:
-      - ./:/var/www/html
-    networks:
-      - travellist
+      - '.:/var/www/html'
 
   db:
     image: mysql:8
@@ -32,17 +33,6 @@ services:
     networks:
       - travellist
 
-  nginx:
-    image: nginx:alpine
-    container_name: travellist-nginx
-    restart: unless-stopped
-    ports:
-      - '8000:90'
-    volumes:
-      - ./:/var/www/html
-      - ./docker-compose/nginx:/etc/nginx/conf.d/
-    networks:
-      - travellist
 
 networks:
   travellist:
